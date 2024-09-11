@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -16,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.nuevoproyecto4.ui.theme.NuevoProyecto4Theme
 
 class MainActivity : ComponentActivity() {
@@ -65,6 +67,23 @@ fun LazyRowExample() {
         }
     }
 }
+@Composable
+fun SurfaceExample() {
+    Surface(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(8.dp),
+        color = Color.Cyan,
+        contentColor = Color.Black,
+        border = BorderStroke(2.dp, Color.DarkGray)
+    ) {
+        Text(
+            text = "This is a Surface",
+            modifier = Modifier.padding(24.dp),
+            fontSize = 20.sp
+        )
+    }
+}
 
 
 @Preview(showBackground = true)
@@ -75,13 +94,3 @@ fun GreetingPreview() {
     }
 }
 
-@Composable
-fun SurfaceExample() {
-    Surface(
-        modifier = Modifier.fillMaxSize(),
-        color = Color.Blue,
-        contentColor = Color.White
-    ) {
-        Text("This is a Surface", modifier = Modifier.padding(16.dp))
-    }
-}
