@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,7 +28,7 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.padding(innerPadding)
                     )
                     LazyColumnExample()
-
+                    LazyRowExample()
                 }
             }
         }
@@ -51,6 +52,21 @@ fun LazyColumnExample() {
         }
     }
 }
+
+
+@Composable
+fun LazyRowExample() {
+    LazyRow {
+        items(100) { index ->
+            Text(text = "Item $index", modifier = Modifier.padding(8.dp))
+        }
+    }
+}
+
+
+
+
+
 
 @Preview(showBackground = true)
 @Composable
